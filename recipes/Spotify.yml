@@ -19,6 +19,18 @@ ingredients:
     - ls spotify-client*.deb | cut -d _ -f 2 | sed -e 's|-|.|g' > VERSION
     - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/g/gconf/" -O - | grep -o 'libgconf-2-4[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
     - wget -c "http://deb.debian.org/debian/pool/main/g/gconf/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/c/curl/" -O - | grep -o 'libcurl3-gnutls_7.52[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/c/curl/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/g/gcc-6/" -O - | grep -o 'libatomic1_6[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/g/gcc-6/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/r/rtmpdump/" -O - | grep -o 'librtmp1_2.4[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/r/rtmpdump/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/g/gnutls28/" -O - | grep -o 'libgnutls-deb0-28_3.3[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/g/gnutls28/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/n/nettle/" -O - | grep -o 'libhogweed2_2.7.1-5[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/n/nettle/$DEB"
+    - DEB=$(wget -q "http://deb.debian.org/debian/pool/main/n/nettle/" -O - | grep -o 'libnettle4_2.7.1-5[^"]*_amd64\.deb' | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://deb.debian.org/debian/pool/main/n/nettle/$DEB"
 
 script:
   - cp ./usr/share/spotify/spotify.desktop .
